@@ -57,11 +57,11 @@ jobs:
 
       - name: Compile for macOS Silicon
         if: matrix.target == 'aarch64-apple-darwin'
-        run: dx bundle --desktop --release --package-types "app" --package-types "dmg"
+        run: dx bundle --desktop --release --package-types "macos" --package-types "dmg"
 
       - name: Compile for macOS Intel
         if: matrix.target == 'x86_64-apple-darwin'
-        run: dx bundle --desktop --release --package-types "app" --package-types "dmg"
+        run: dx bundle --desktop --release --package-types "macos" --package-types "dmg"
 
       - name: Compile for Windows
         if: matrix.target == 'x86_64-pc-windows-msvc'
