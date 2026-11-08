@@ -65,7 +65,7 @@ jobs:
 
       - name: Compile for Windows
         if: matrix.target == 'x86_64-pc-windows-msvc'
-        run: dx bundle --desktop --release --package-types "msi" --package-types "exe"
+        run: dx bundle --desktop --release --package-types "msi" --package-types "nsis"
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
