@@ -26,7 +26,7 @@ jobs:
           targets: ${{ matrix.target }}
 
       - name: Install Dioxus CLI
-        run: cargo install dioxus-cli
+        run: curl -sSL https://dioxus.dev/install.sh | bash
 
       - name: Compile for web
         run: dx bundle --web --release
@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: |
-            target/dx/bm-icalculator/release/web/public*
+            target/dx/bm-icalculator/release/web/public/*
 
       - name: Deploy to GitHub Pages
         id: deployment
